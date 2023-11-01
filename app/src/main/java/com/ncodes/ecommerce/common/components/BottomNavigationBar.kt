@@ -4,6 +4,8 @@ package com.ncodes.ecommerce.common.components
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material3.Badge
 import androidx.compose.material3.BadgedBox
 import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -13,6 +15,7 @@ import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
@@ -42,15 +45,15 @@ fun BottomNavigationBar(
                 icon = {
                     Column {
                         BadgedBox(badge = {
-                            if (item.badgeCount > 0)
-                                Text(text = item.badgeCount.toString())
-                        }, modifier = Modifier.padding(10.dp)) {
+                            if (item.badgeCount > 0) {
+                                Badge { Text(item.badgeCount.toString()) }
+                            }
+                        }) {
                             Icon(imageVector = item.icon, contentDescription = item.name)
                         }
                     }
                 }
             )
-
         }
     }
 }

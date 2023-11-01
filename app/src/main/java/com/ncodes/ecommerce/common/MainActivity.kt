@@ -29,7 +29,7 @@ class MainActivity : ComponentActivity() {
                     val navController = rememberNavController()
                     NavHost(
                         navController = navController,
-                        startDestination = Screens.LoginNav.route
+                        startDestination = Screens.LandingContainer.route
                     ) {
                         navigation(
                             startDestination = Screens.LoginScreen.route,
