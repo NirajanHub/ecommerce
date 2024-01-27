@@ -22,6 +22,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -46,6 +47,8 @@ fun HomeTop() {
             verticalAlignment = Alignment.CenterVertically
         ) {
             Row(
+                modifier = Modifier.weight(1f)
+                    .padding(start=10.dp),
                 horizontalArrangement = Arrangement.Start,
                 verticalAlignment = Alignment.CenterVertically
             ) {
@@ -64,6 +67,7 @@ fun HomeTop() {
                 )
             }
             Icon(
+                modifier = Modifier.weight(1f),
                 painter = painterResource(id = R.drawable.ic_walmart),
                 contentDescription = stringResource(
                     id = R.string.logo
@@ -72,18 +76,20 @@ fun HomeTop() {
             )
             Row(
                 modifier = Modifier
-                    .align(Alignment.CenterVertically),
-                horizontalArrangement = Arrangement.Center,
+                    .align(Alignment.CenterVertically)
+                    .weight(1f),
+                horizontalArrangement = Arrangement.End,
                 verticalAlignment = Alignment.CenterVertically,
             ) {
                 Box(
                     modifier = Modifier
                         .align(Alignment.CenterVertically)
-                        .padding(end = 10.dp)
                 ) {
                     CustomText(
                         resId = R.font.aeonik_light,
-                        text = "$499.60")
+                        text = "$499.60",
+                        style = TextStyle(fontSize = 12.sp)
+                        )
                 }
                 Row(
                     horizontalArrangement = Arrangement.spacedBy((-35).dp),
@@ -108,8 +114,9 @@ fun HomeTop() {
                             .background(Color.Yellow)
                     ){
                         CustomText(
+                            style = TextStyle(
                             fontSize = 12.sp,
-                            color = Color.Black,
+                            color = Color.Black),
                             text = "4",
                         )
                     }

@@ -64,10 +64,13 @@ dependencies {
     implementation("androidx.compose.material3:material3")
 
     //Composables
+    implementation (platform("androidx.compose:compose-bom:2023.06.01"))
+
     implementation ("androidx.hilt:hilt-navigation-compose:1.0.0")
 
     //Room
     implementation("androidx.room:room-ktx:2.6.0")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
     kapt ("androidx.room:room-compiler:2.6.0")
 
     //Hilt
@@ -78,7 +81,10 @@ dependencies {
 
     //Coil For Image Loading
     implementation("io.coil-kt:coil-compose:2.5.0")
+
+    //testing
     testImplementation("junit:junit:4.13.2")
+    testImplementation("io.mockk:mockk:1.0")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     androidTestImplementation(platform("androidx.compose:compose-bom:2023.03.00"))

@@ -8,18 +8,7 @@ import kotlinx.coroutines.flow.Flow
 
 class ProductRepositoryImpl(private val dao: ProductDao): ProductRepository {
 
-        override fun getAllProducts(): Flow<List<Product>> {
+    override fun getAllProducts(): Flow<List<Product>> {
         return dao.getProduct()
     }
-
-//    override suspend fun insertProduct(product: Product) {
-//        dao.insertProduct(product)
-//    }
-//
-//    override suspend fun deleteProduct(product: Product) {
-//        dao.deleteProduct(product = product)
-//    }
-//    override fun getAllProducts(): Flow<List<Product>> {
-//        return dao.getProduct()
-//    }
 }

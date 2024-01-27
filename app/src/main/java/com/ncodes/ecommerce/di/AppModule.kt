@@ -7,6 +7,8 @@ import com.ncodes.ecommerce.common.EcommerceDatabase
 import com.ncodes.ecommerce.landing.domain.repository.ProductRepository
 import com.ncodes.ecommerce.landing.domain.usecases.GetAllProducts
 import com.ncodes.ecommerce.landing.domain.usecases.ProductUseCases
+import com.ncodes.ecommerce.login.data.repository.LoginRepositoryImpl
+import com.ncodes.ecommerce.login.domain.repository.LoginRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -24,6 +26,12 @@ object AppModule {
             EcommerceDatabase::class.java,
             EcommerceDatabase.DATABASE_NAME
         ).build()
+    }
+
+    @Provides
+    @Singleton
+    fun provideLoginRepository(): LoginRepository{
+        return LoginRepositoryImpl()
     }
 
     @Provides

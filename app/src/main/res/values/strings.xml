@@ -7,4 +7,38 @@
     <string name="email">Email</string>
     <string name="submit">Submit</string>
     <string name="logo">Logo</string>
+
+    <string name="department">Departments</string>
+    //// Home Headings
+    <string-array name="home_top">
+        <item>Savings</item>
+        <item>Grocery&amp;Essentials</item>
+        <item>Gift Finder</item>
+        <item>Toy Shop</item>
+        <item>Fashion</item>
+        <item>Home</item>
+        <item>Registry</item>
+        <item>ONE Debit</item>
+        <item>Walmart+</item>
+    </string-array>
+
+
+    //Landing
+
+    //OrderTracking
+
+    //Landing
+
+    //OrderTracking
+    <string name= "order_ontheway">Your order is on the way</string>
+    //pass variable in sequence
+    <string name= "arrival">Arrives today, %1$s - %2$s</string>
+    <string name="track">Track</string>
+    <string name="placed">Placed</string>
+    <string name="preparing">Preparing</string>
+    <string name="on_the_way">On the way</string>
+    <string name="delivered">Delivered</string>
+    <string name="free_assembly">Free Assembly</string>
+    <string name="a_new_brand_that_looks_good">A new brand that looks good</string>
+
 </resources>
