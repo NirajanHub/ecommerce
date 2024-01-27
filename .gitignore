@@ -1,15 +1,31 @@
-*.iml
-.gradle
+#Generated files
+/build/
+*.apk
+output.json
+
+#Local configuration file (sdk path,etc)
 /local.properties
+
+#Gradle generated file
+.gradle/
+
+#Android Studio
 /.idea/caches
 /.idea/libraries
 /.idea/modules.xml
 /.idea/workspace.xml
 /.idea/navEditor.xml
 /.idea/assetWizardSettings.xml
+/.idea/
+*.iml
+
+#OS-specific file
 .DS_Store
-/build
-/captures
+
+#Android Studio capture folder. This is where profiling captures are saved.
+/captures/
+
+#Misc
 .externalNativeBuild
 .cxx
 local.properties
