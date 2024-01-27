@@ -1,6 +1,8 @@
 package com.login.presentation
 
 import com.common.TestStrings
+import com.ncodes.ecommerce.login.data.repository.LoginRepositoryImpl
+import com.ncodes.ecommerce.login.domain.repository.LoginRepository
 import com.ncodes.ecommerce.login.presentation.LoginViewModel
 import junit.framework.TestCase.assertEquals
 import org.junit.Before
@@ -10,9 +12,11 @@ import org.junit.Test
 class LoginViewModelTest  {
     private lateinit var loginViewModel: LoginViewModel
 
+    private lateinit var loginRepository : LoginRepository
     @Before
     fun setUp(){
-        loginViewModel = LoginViewModel()
+        loginRepository = LoginRepositoryImpl()
+        loginViewModel = LoginViewModel(loginRepository)
     }
     @Test
     fun `validating user credential data with wrong input`(){
