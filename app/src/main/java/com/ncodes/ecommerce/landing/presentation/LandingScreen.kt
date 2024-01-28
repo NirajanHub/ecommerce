@@ -79,6 +79,7 @@ fun LandingScreen(
         Surface(
             modifier = Modifier
                 .fillMaxSize()
+
                 .padding(it),
             color = MaterialTheme.colorScheme.background
         ) {
