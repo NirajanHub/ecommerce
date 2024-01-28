@@ -72,6 +72,12 @@ fun LandingScreen(
                         route = Screens.LoginNav.route,
                         icon = Icons.Sharp.AccountBox,
                         badgeCount = 1222222222
+                    ),
+                    BottomNavItems(
+                        "home",
+                        route = Screens.LoginNav.route,
+                        icon = Icons.Sharp.AccountBox,
+                        badgeCount = 1222222222
                     )
                 ),
                 navController = navController!!,
