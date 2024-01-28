@@ -33,6 +33,7 @@ class LoginViewModelTest  {
         val bool = loginViewModel.validateInput(TestStrings.rightUserName,TestStrings.rightPass)
         //Assert
         assertEquals(true, bool)
+
     }
 
     @Test
