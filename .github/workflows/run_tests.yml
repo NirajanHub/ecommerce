@@ -24,3 +24,5 @@ jobs:
       run: chmod +x gradlew
     - name: Run microtests
       run: ./gradlew testDebug
+    - name: Build test apk
+      run: ./gradlew assembleDebug
