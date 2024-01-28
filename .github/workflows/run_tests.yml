@@ -22,10 +22,10 @@ jobs:
 
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
+
     - name: Run microtests
       run: ./gradlew testDebug
-    - name: Build test apk
-      run: ./gradlew assembleDebug
+
     - name: Upload APK artifact
       uses: actions/upload-artifact@v2
       with:
