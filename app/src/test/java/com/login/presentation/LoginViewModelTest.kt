@@ -39,6 +39,7 @@ class LoginViewModelTest  {
     @Test
     fun `login with wrong data`(){
         //loginViewModel.login("","")
+        ///Hello
     }
 
 }
