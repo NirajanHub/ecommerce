@@ -3,6 +3,8 @@ name: Run Tests
 on:
   push:
     branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
 jobs:
   build:
@@ -25,8 +27,3 @@ jobs:
     - name: Run microtests
       run: ./gradlew testDebug
 
-    - name: Upload APK artifact
-      uses: actions/upload-artifact@v2
-      with:
-          name: app-debug
-          path: app/build/outputs/apk/debug/app-debug.apk
