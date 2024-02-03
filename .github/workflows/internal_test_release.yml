@@ -13,11 +13,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: set up JDK 1.8
+      - name: set up JDK 17
         uses: actions/setup-java@v1
         with:
             java-version: 17
-
 
       - name: Build with Gradle
         id: build
@@ -31,18 +30,18 @@ jobs:
         id: sign
         uses: r0adkll/sign-android-release@v1
         with:
-          releaseDirectory: app/build/outputs/bundle/release
+          releaseDirectory: app/release
           signingKeyBase64: ${{ secrets.SIGNINGKEY }}
           alias: ${{ secrets.ALIAS }}
           keyStorePassword: ${{ secrets.KEYSTOREPASSWORD }}
           keyPassword: ${{ secrets.KEYPASSWORD }}
 
 
-      - name: Deploy to Play Store (BETA)
+      - name: Deploy to Play Store (qa)
         id: deploy
         uses: r0adkll/upload-google-play@v1
         with:
           serviceAccountJson: service_account.json
           packageName: com.ncodes.ecommerce
-          releaseFile: app/build/outputs/bundle/release/app-release.aab
+          releaseFile: app/release/app-release.aab
           track: qa
