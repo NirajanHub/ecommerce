@@ -21,7 +21,7 @@ jobs:
       - name: Upload APK to Internal Testing
         uses: r0adkll/upload-google-play@v1
         with:
-          service_account_json_key: ${{ secrets.GOOGLE_PLAY_JSON_KEY }}
+          serviceAccountJson: service_account.json
           packageName: com.ncodes.ecommerce
           track: qa
           apk: app/build/outputs/apk/release/app-release.apk
