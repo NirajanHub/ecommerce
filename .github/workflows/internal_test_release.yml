@@ -24,4 +24,4 @@ jobs:
           serviceAccountJson: service_account.json
           packageName: com.ncodes.ecommerce
           track: qa
-          apk: app/release/app-release.apk
+          releaseFile: app/release/app-release.apk
