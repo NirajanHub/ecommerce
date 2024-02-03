@@ -18,10 +18,33 @@ jobs:
         with:
             java-version: 17
 
-      - name: Upload APK to Internal Testing
+      - name: Grant rights
+        run: chmod +x build.gradle
+
+      - name: Build with Gradle
+        id: build
+        run: ./gradlew build
+
+      - name: Build Release AAB
+        id: buildRelease
+        run: ./gradlew bundleRelease
+
+      - name: Sign AAB
+        id: sign
+        uses: r0adkll/sign-android-release@v1
+        with:
+          releaseDirectory: app/build/outputs/bundle/release
+          signingKeyBase64: ${{ secrets.SIGNINGKEY }}
+          alias: ${{ secrets.ALIAS }}
+          keyStorePassword: ${{ secrets.KEYSTOREPASSWORD }}
+          keyPassword: ${{ secrets.KEYPASSWORD }}
+
+
+      - name: Deploy to Play Store (BETA)
+        id: deploy
         uses: r0adkll/upload-google-play@v1
         with:
           serviceAccountJson: service_account.json
           packageName: com.ncodes.ecommerce
+          releaseFile: app/build/outputs/bundle/release/app-release.aab
           track: qa
-          releaseFile: app/release/app-release.apk
