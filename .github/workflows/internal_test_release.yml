@@ -22,6 +22,6 @@ jobs:
         uses: r0adkll/upload-google-play@v1
         with:
           service_account_json_key: ${{ secrets.GOOGLE_PLAY_JSON_KEY }}
-          package_name: your.package.name
+          package_name: com.ncodes.ecommerce
           track: qa
           apk: app/build/outputs/apk/release/app-release.apk
