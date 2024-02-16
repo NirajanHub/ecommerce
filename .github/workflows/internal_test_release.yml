@@ -1,0 +1,47 @@
+name: Internal Testing App Upload
+
+on:
+  push:
+    branches: [qa]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: set up JDK 17
+        uses: actions/setup-java@v1
+        with:
+            java-version: 17
+
+      - name: Build with Gradle
+        id: build
+        run: ./gradlew build
+
+      - name: Build Release AAB
+        id: buildRelease
+        run: ./gradlew bundleRelease
+
+      - name: Sign AAB
+        id: sign
+        uses: r0adkll/sign-android-release@v1
+        with:
+          releaseDirectory: app/release
+          signingKeyBase64: ${{ secrets.SIGNINGKEY }}
+          alias: ${{ secrets.ALIAS }}
+          keyStorePassword: ${{ secrets.KEYSTOREPASSWORD }}
+          keyPassword: ${{ secrets.KEYPASSWORD }}
+
+
+      - name: Deploy to Play Store (qa)
+        id: deploy
+        uses: r0adkll/upload-google-play@v1
+        with:
+          serviceAccountJson: service_account.json
+          packageName: com.ncodes.ecommerce
+          releaseFile: app/release/app-release.aab
+          track: qa
