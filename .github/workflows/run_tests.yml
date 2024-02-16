@@ -7,7 +7,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
+  lint:
 
     runs-on: ubuntu-latest
 
@@ -34,7 +34,7 @@ jobs:
         path: app/build/reports/lint-results-debug.html
 
   unit-test:
-    needs: [Lint]
+    needs: [lint]
     runs-on: ubuntu-latest
     steps:
       - name: checkout of the code
