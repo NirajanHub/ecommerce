@@ -33,13 +33,13 @@ jobs:
         name: index.html
         path: app/build/reports/lint-results-debug.html
 
-unit-test:
-  needs: [index]
-  runs-on: ubuntu-latest
-  steps:
-    - name: checkout of the code
-      uses: actions/checkout@v3
+  unit-test:
+    needs: [index]
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout of the code
+        uses: actions/checkout@v3
 
-    - name: Run micro-tests
-      run: ./gradlew testDebug
+      - name: Run micro-tests
+        run: ./gradlew testDebug
 
