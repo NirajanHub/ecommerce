@@ -34,7 +34,7 @@ jobs:
         path: app/build/reports/lint-results-debug.html
 
   unit-test:
-    needs: [index]
+    needs: [Lint]
     runs-on: ubuntu-latest
     steps:
       - name: checkout of the code
