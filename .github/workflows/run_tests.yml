@@ -87,16 +87,6 @@ jobs:
           keyStorePassword: ${{secrets.KEYSTOREPASSWORD}}
           keyPassword: ${{secrets.KEYPASSWORD}}
 
-      - name: Print GITHUB_REF
-        run: echo "GITHUB_REF is $GITHUB_REF"
-
-      - name: Tag Release
-        run: |
-          version_name=${GITHUB_REF##*/}
-          echo "Tagging release with tag $version_name"
-          git tag $version_name release/$version_name
-          $git push origin --tags
-
       - name: Deploy to Alpha
         uses: r0adkll/upload-google-play@v1
         with:
