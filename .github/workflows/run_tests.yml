@@ -82,10 +82,13 @@ jobs:
         uses: r0adkll/sign-android-release@v1
         with:
           releaseDirectory: app/build/outputs/bundle/release
-          signKeyBase64: ${{secrets.SIGNINGKEY}}
+          signingKeyBase64: ${{secrets.SIGNINGKEY}}
           alias: ${{secrets.ALIAS}}
-          keystorePassword: ${{secrets.KEYSTOREPASSWORD}}
+          keyStorePassword: ${{secrets.KEYSTOREPASSWORD}}
           keyPassword: ${{secrets.KEYPASSWORD}}
+
+      - name: Print GITHUB_REF
+        run: echo "GITHUB_REF is $GITHUB_REF"
 
       - name: Tag Release
         run: |
