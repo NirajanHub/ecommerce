@@ -93,7 +93,7 @@ jobs:
           serviceAccountJson: service_account.json
           packageName: com.ncodes.ecommerce
           releaseFiles: app/build/outputs/bundle/release/app-release.aab
-          track: alpha
+          track: qa
           whatsNewDirectory: distribution/
 
 
