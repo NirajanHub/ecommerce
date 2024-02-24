@@ -96,7 +96,7 @@ jobs:
           track: qa
           status: inProgress
           userFraction: 0.9
-          whatsNewDirectory: distribution/whatsNewDirectory
+          whatsNewDirectory: distribution/whatsNewDirectory/
 
 
 
