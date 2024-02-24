@@ -95,7 +95,8 @@ jobs:
           releaseFiles: app/build/outputs/bundle/release/app-release.aab
           track: qa
           status: inProgress
-          whatsNewDirectory: distribution/
+          userFraction: 0.9
+          whatsNewDirectory: distribution/whatsNewDirectory
 
 
 
