@@ -94,6 +94,7 @@ jobs:
           packageName: com.ncodes.ecommerce
           releaseFiles: app/build/outputs/bundle/release/app-release.aab
           track: qa
+          status: inProgress
           whatsNewDirectory: distribution/
 
 
