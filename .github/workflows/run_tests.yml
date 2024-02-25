@@ -96,7 +96,7 @@ jobs:
           serviceAccountJson: service_account.json
           packageName: com.ncodes.ecommerce
           releaseFiles: app/build/outputs/bundle/release/app-release.aab
-          track: qa
+          track: internal
           status: draft
           whatsNewDirectory: distribution/whatsNewDirectory/
 
