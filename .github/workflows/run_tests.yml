@@ -58,7 +58,7 @@ jobs:
 #          name: unit_test_report
 #          path: app/build/reports/tests/testDebugUnitTest/
 
-  deploy-to-alpha:
+  deploy-to-internal:
 #    needs: [unit-test]
     runs-on: ubuntu-latest
     steps:
@@ -84,7 +84,7 @@ jobs:
       - name: Sign Release
         uses: r0adkll/sign-android-release@v1
         with:
-          releaseDirectory: app/build/outputs/bundle/release
+          releaseDirectory: app/release
           signingKeyBase64: ${{secrets.SIGNINGKEY}}
           alias: ${{secrets.ALIAS}}
           keyStorePassword: ${{secrets.KEYSTOREPASSWORD}}
@@ -96,11 +96,10 @@ jobs:
           serviceAccountJsonPlainText: ${{secrets.SERVICE_ACCOUNT}}
           packageName: com.ncodes.ecommerce
           track: internal
-          status: inProgress
-          userFraction: 0.99
+          status: draft
           whatsNewDirectory: distribution/whatsNewDirectory/
           releaseName: 2.2
-          releaseFiles: app/build/outputs/bundle/release/app-release.aab
+          releaseFiles: app/release/app-release.aab
 
 
 
