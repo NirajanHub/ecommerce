@@ -84,7 +84,7 @@ jobs:
       - name: Sign Release
         uses: r0adkll/sign-android-release@v1
         with:
-          releaseDirectory: app/release
+          releaseDirectory: app/build/outputs/bundle/release/
           signingKeyBase64: ${{secrets.SIGNINGKEY}}
           alias: ${{secrets.ALIAS}}
           keyStorePassword: ${{secrets.KEYSTOREPASSWORD}}
@@ -99,7 +99,7 @@ jobs:
           status: completed
           whatsNewDirectory: distribution/whatsNewDirectory/
           releaseName: 2.3
-          releaseFiles: app/release/app-release.aab
+          releaseFiles: app/build/outputs/bundle/release/app-release.aab
 
 
 
