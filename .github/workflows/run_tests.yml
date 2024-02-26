@@ -97,7 +97,6 @@ jobs:
           packageName: com.ncodes.ecommerce
           releaseFiles: app/build/outputs/bundle/release/app-release.aab
           track: internal
-          status: draft
           versionCode: 2
           versionName: 2.0.0
           whatsNewDirectory: distribution/whatsNewDirectory/
