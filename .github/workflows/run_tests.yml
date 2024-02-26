@@ -82,7 +82,7 @@ jobs:
           ./gradlew bundleRelease
 
       - name: Sign Release
-        uses: r0adkll/sign-android-release@v2
+        uses: r0adkll/sign-android-release@v1
         with:
           releaseDirectory: app/build/outputs/bundle/release
           signingKeyBase64: ${{secrets.SIGNINGKEY}}
@@ -96,7 +96,8 @@ jobs:
           serviceAccountJsonPlainText: ${{secrets.SERVICE_ACCOUNT}}
           packageName: com.ncodes.ecommerce
           track: internal
-          status: complete
+          status: inProgress
+          userFraction: 0.99
           whatsNewDirectory: distribution/whatsNewDirectory/
           releaseName: 2.2
           releaseFiles: app/build/outputs/bundle/release/app-release.aab
