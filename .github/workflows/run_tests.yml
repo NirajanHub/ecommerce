@@ -96,9 +96,9 @@ jobs:
           serviceAccountJsonPlainText: ${{secrets.SERVICE_ACCOUNT}}
           packageName: com.ncodes.ecommerce
           track: internal
-          status: draft
+          status: complete
           whatsNewDirectory: distribution/whatsNewDirectory/
-          releaseName: 2.2
+          releaseName: 2.3
           releaseFiles: app/release/app-release.aab
 
 
