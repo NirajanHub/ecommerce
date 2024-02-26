@@ -82,7 +82,7 @@ jobs:
           ./gradlew bundleRelease
 
       - name: Sign Release
-        uses: r0adkll/sign-android-release@v4
+        uses: r0adkll/sign-android-release@v2
         with:
           releaseDirectory: app/build/outputs/bundle/release
           signingKeyBase64: ${{secrets.SIGNINGKEY}}
